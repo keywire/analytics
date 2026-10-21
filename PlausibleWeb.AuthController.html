@@ -4,21 +4,19 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.29.4">
+    <meta name="generator" content="ExDoc v0.35.1">
     <meta name="project" content="Plausible v0.0.1">
 
+
     <title>PlausibleWeb.AuthController — Plausible v0.0.1</title>
-    <link rel="stylesheet" href="dist/html-elixir-HHVY3JYD.css" />
+    <link rel="stylesheet" href="dist/html-elixir-P45HOAC7.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
-    <script src="dist/handlebars.templates-XWGFFSCD.js"></script>
-    <script src="dist/sidebar_items-5E737BA3.js"></script>
-
-      <script src="docs_config.js"></script>
-
-    <script async src="dist/html-JDI3AVDD.js"></script>
-
+    <script src="dist/handlebars.templates-K7URE6B4.js"></script>
+    <script src="dist/sidebar_items-9EC934E4.js"></script>
+    <script src="docs_config.js"></script>
+    <script async src="dist/html-PVRIOB7F.js"></script>
 
   </head>
   <body data-type="modules" class="page-module">
@@ -36,91 +34,117 @@
       } catch (error) { }
     </script>
 
-<div class="main">
+<div class="body-wrapper">
 
-<button class="sidebar-button sidebar-toggle" aria-label="toggle sidebar">
+<button id="sidebar-menu" class="sidebar-button sidebar-toggle" aria-label="toggle sidebar" aria-controls="sidebar">
   <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
 </button>
 
-<section class="sidebar">
-  <form class="sidebar-search" action="search.html">
-    <button type="submit" class="search-button" aria-label="Submit Search">
-      <i class="ri-search-2-line" aria-hidden="true" title="Submit search"></i>
-    </button>
-    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
-      <i class="ri-close-line ri-lg" aria-hidden="true" title="Cancel search"></i>
-    </button>
-    <label class="search-label">
-      <p class="sr-only">Search</p>
-      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
-    </label>
-  </form>
-
-  <div class="autocomplete">
-    <div class="autocomplete-results">
-    </div>
-  </div>
+<nav id="sidebar" class="sidebar">
 
   <div class="sidebar-header">
+    <div class="sidebar-projectInfo">
 
-      <a href="readme.html">
-        <img src="assets/logo.png" alt="Plausible" class="sidebar-projectImage">
-      </a>
+        <a href="readme.html" class="sidebar-projectImage">
+          <img src="assets/logo.svg" alt="Plausible" />
+        </a>
 
-    <div class="sidebar-projectDetails">
-      <a href="readme.html" class="sidebar-projectName" translate="no">
+      <div>
+        <a href="readme.html" class="sidebar-projectName" translate="no">
 Plausible
-      </a>
-      <div class="sidebar-projectVersion" translate="no">
-        v0.0.1
+        </a>
+        <div class="sidebar-projectVersion" translate="no">
+          v0.0.1
+        </div>
       </div>
     </div>
-    <ul class="sidebar-listNav">
-      <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+    <ul id="sidebar-listNav" class="sidebar-listNav" role="tablist">
+      <li>
+        <button id="extras-list-tab-button" role="tab" data-type="extras" aria-controls="extras-tab-panel" aria-selected="true" tabindex="0">
+Pages
+        </button>
+      </li>
 
-        <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+        <li>
+          <button id="modules-list-tab-button" role="tab" data-type="modules" aria-controls="modules-tab-panel" aria-selected="false" tabindex="-1">
+            Modules
+          </button>
+        </li>
 
 
-        <li><a id="tasks-list-link" href="#full-list"><span translate="no">Mix</span> Tasks</a></li>
+        <li>
+          <button id="tasks-list-tab-button" role="tab" data-type="tasks" aria-controls="tasks-tab-panel" aria-selected="false" tabindex="-1">
+            <span translate="no">Mix</span> Tasks
+          </button>
+        </li>
 
     </ul>
   </div>
 
-  <div class="gradient"></div>
-  <ul id="full-list"></ul>
-</section>
+  <div id="extras-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="extras-list-tab-button">
+    <ul id="extras-full-list" class="full-list"></ul>
+  </div>
 
-<section class="content">
+    <div id="modules-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="modules-list-tab-button" hidden>
+      <ul id="modules-full-list" class="full-list"></ul>
+    </div>
+
+
+    <div id="tasks-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="tasks-list-tab-button" hidden>
+      <ul id="tasks-full-list" class="full-list"></ul>
+    </div>
+
+</nav>
+
+<main class="content">
   <output role="status" id="toast"></output>
-  <div class="content-outer">
-    <div id="content" class="content-inner">
 
-<h1>
-<button class="icon-action display-settings">
-  <i class="ri-settings-3-line"></i>
-  <span class="sr-only">Settings</span>
-</button>
+  <div id="content" class="content-inner">
+    <div class="top-search">
+      <div class="search-settings">
+        <form class="search-bar" action="search.html">
+          <label class="search-label">
+            <span class="sr-only">Search documentation of Plausible</span>
+            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+          </label>
+          <button type="submit" class="search-button" aria-label="Submit Search">
+            <i class="ri-search-2-line ri-lg" aria-hidden="true" title="Submit search"></i>
+          </button>
+          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+            <i class="ri-close-line ri-lg" title="Cancel search"></i>
+          </button>
+        </form>
+        <div class="autocomplete">
+        </div>
+        <button class="icon-settings display-settings">
+          <i class="ri-settings-3-line"></i>
+          <span class="sr-only">Settings</span>
+        </button>
+      </div>
+    </div>
+
+<div id="top-content">
+  <h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L1" title="View Source" class="icon-action" rel="help">
+        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        <span class="sr-only">View Source</span>
+      </a>
+
+    <span translate="no">PlausibleWeb.AuthController</span> 
+    <small class="app-vsn" translate="no">(Plausible v0.0.1)</small>
+
+  </h1>
 
 
-    <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L1" title="View Source" class="icon-action" rel="help">
-      <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-      <span class="sr-only">View Source</span>
-    </a>
-
-  <span translate="no">PlausibleWeb.AuthController</span> 
-  <small class="app-vsn" translate="no">(Plausible v0.0.1)</small>
-
-</h1>
-
-
+</div>
 
   <section id="summary" class="details-list">
     <h1 class="section-heading">
       <a class="hover-link" href="#summary">
         <i class="ri-link-m" aria-hidden="true"></i>
-        <span class="sr-only">Link to this section</span>
       </a>
-      Summary
+      <span class="text">Summary</span>
     </h1>
 <div class="summary-functions summary">
   <h2>
@@ -129,7 +153,7 @@ Plausible
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#activate/2" translate="no">activate(conn, map)</a>
+        <a href="#activate/2" data-no-tooltip translate="no">activate(conn, map)</a>
 
       </div>
 
@@ -137,7 +161,7 @@ Plausible
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#activate_form/2" translate="no">activate_form(conn, params)</a>
+        <a href="#activate_form/2" data-no-tooltip translate="no">activate_form(conn, params)</a>
 
       </div>
 
@@ -145,7 +169,7 @@ Plausible
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#create_api_key/2" translate="no">create_api_key(conn, map)</a>
+        <a href="#delete_me/2" data-no-tooltip translate="no">delete_me(conn, params)</a>
 
       </div>
 
@@ -153,7 +177,7 @@ Plausible
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#delete_api_key/2" translate="no">delete_api_key(conn, map)</a>
+        <a href="#disable_2fa/2" data-no-tooltip translate="no">disable_2fa(conn, map)</a>
 
       </div>
 
@@ -161,7 +185,7 @@ Plausible
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#delete_me/2" translate="no">delete_me(conn, params)</a>
+        <a href="#force_initiate_2fa_setup/2" data-no-tooltip translate="no">force_initiate_2fa_setup(conn, params)</a>
 
       </div>
 
@@ -169,7 +193,7 @@ Plausible
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#google_auth_callback/2" translate="no">google_auth_callback(conn, params)</a>
+        <a href="#generate_2fa_recovery_codes/2" data-no-tooltip translate="no">generate_2fa_recovery_codes(conn, map)</a>
 
       </div>
 
@@ -177,7 +201,7 @@ Plausible
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#login/2" translate="no">login(conn, map)</a>
+        <a href="#google_auth_callback/2" data-no-tooltip translate="no">google_auth_callback(conn, params)</a>
 
       </div>
 
@@ -185,7 +209,7 @@ Plausible
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#login_form/2" translate="no">login_form(conn, params)</a>
+        <a href="#initiate_2fa_setup/2" data-no-tooltip translate="no">initiate_2fa_setup(conn, params)</a>
 
       </div>
 
@@ -193,7 +217,7 @@ Plausible
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#logout/2" translate="no">logout(conn, params)</a>
+        <a href="#invitation_expired/2" data-no-tooltip translate="no">invitation_expired(conn, params)</a>
 
       </div>
 
@@ -201,7 +225,7 @@ Plausible
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#new_api_key/2" translate="no">new_api_key(conn, params)</a>
+        <a href="#login/2" data-no-tooltip translate="no">login(conn, params)</a>
 
       </div>
 
@@ -209,7 +233,7 @@ Plausible
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#password_form/2" translate="no">password_form(conn, params)</a>
+        <a href="#login_form/2" data-no-tooltip translate="no">login_form(conn, params)</a>
 
       </div>
 
@@ -217,7 +241,7 @@ Plausible
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#password_reset/2" translate="no">password_reset(conn, map)</a>
+        <a href="#logout/2" data-no-tooltip translate="no">logout(conn, params)</a>
 
       </div>
 
@@ -225,7 +249,7 @@ Plausible
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#password_reset_form/2" translate="no">password_reset_form(conn, map)</a>
+        <a href="#password_reset/2" data-no-tooltip translate="no">password_reset(conn, params)</a>
 
       </div>
 
@@ -233,7 +257,7 @@ Plausible
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#password_reset_request/2" translate="no">password_reset_request(conn, params)</a>
+        <a href="#password_reset_form/2" data-no-tooltip translate="no">password_reset_form(conn, params)</a>
 
       </div>
 
@@ -241,7 +265,7 @@ Plausible
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#password_reset_request_form/2" translate="no">password_reset_request_form(conn, _)</a>
+        <a href="#password_reset_request/2" data-no-tooltip translate="no">password_reset_request(conn, params)</a>
 
       </div>
 
@@ -249,7 +273,7 @@ Plausible
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#register/2" translate="no">register(conn, params)</a>
+        <a href="#password_reset_request_form/2" data-no-tooltip translate="no">password_reset_request_form(conn, _)</a>
 
       </div>
 
@@ -257,7 +281,7 @@ Plausible
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#register_form/2" translate="no">register_form(conn, params)</a>
+        <a href="#request_activation_code/2" data-no-tooltip translate="no">request_activation_code(conn, params)</a>
 
       </div>
 
@@ -265,7 +289,7 @@ Plausible
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#register_from_invitation/2" translate="no">register_from_invitation(conn, params)</a>
+        <a href="#verify_2fa/2" data-no-tooltip translate="no">verify_2fa(conn, params)</a>
 
       </div>
 
@@ -273,7 +297,7 @@ Plausible
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#register_from_invitation_form/2" translate="no">register_from_invitation_form(conn, map)</a>
+        <a href="#verify_2fa_form/2" data-no-tooltip translate="no">verify_2fa_form(conn, params)</a>
 
       </div>
 
@@ -281,7 +305,7 @@ Plausible
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#request_activation_code/2" translate="no">request_activation_code(conn, params)</a>
+        <a href="#verify_2fa_recovery_code/2" data-no-tooltip translate="no">verify_2fa_recovery_code(conn, map)</a>
 
       </div>
 
@@ -289,7 +313,7 @@ Plausible
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#save_settings/2" translate="no">save_settings(conn, map)</a>
+        <a href="#verify_2fa_recovery_code_form/2" data-no-tooltip translate="no">verify_2fa_recovery_code_form(conn, params)</a>
 
       </div>
 
@@ -297,7 +321,7 @@ Plausible
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#set_password/2" translate="no">set_password(conn, map)</a>
+        <a href="#verify_2fa_setup/2" data-no-tooltip translate="no">verify_2fa_setup(conn, map)</a>
 
       </div>
 
@@ -305,7 +329,7 @@ Plausible
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#user_settings/2" translate="no">user_settings(conn, params)</a>
+        <a href="#verify_2fa_setup_form/2" data-no-tooltip translate="no">verify_2fa_setup_form(conn, params)</a>
 
       </div>
 
@@ -320,23 +344,20 @@ Plausible
     <h1 class="section-heading">
       <a class="hover-link" href="#functions">
         <i class="ri-link-m" aria-hidden="true"></i>
-        <span class="sr-only">Link to this section</span>
       </a>
-Functions
+      <span class="text">Functions</span>
     </h1>
     <div class="functions-list">
 <section class="detail" id="activate/2">
 
   <div class="detail-header">
-    <a href="#activate/2" class="detail-link" title="Link to this function">
+    <a href="#activate/2" class="detail-link" data-no-tooltip aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">activate(conn, map)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L200" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L93" class="icon-action" rel="help" aria-label="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
      </a>
 
 
@@ -350,59 +371,13 @@ Functions
 <section class="detail" id="activate_form/2">
 
   <div class="detail-header">
-    <a href="#activate_form/2" class="detail-link" title="Link to this function">
+    <a href="#activate_form/2" class="detail-link" data-no-tooltip aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">activate_form(conn, params)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L178" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L63" class="icon-action" rel="help" aria-label="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-
-  </section>
-</section>
-<section class="detail" id="create_api_key/2">
-
-  <div class="detail-header">
-    <a href="#create_api_key/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">create_api_key(conn, map)</h1>
-
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L513" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-
-  </section>
-</section>
-<section class="detail" id="delete_api_key/2">
-
-  <div class="detail-header">
-    <a href="#delete_api_key/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">delete_api_key(conn, map)</h1>
-
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L532" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
      </a>
 
 
@@ -416,15 +391,73 @@ Functions
 <section class="detail" id="delete_me/2">
 
   <div class="detail-header">
-    <a href="#delete_me/2" class="detail-link" title="Link to this function">
+    <a href="#delete_me/2" class="detail-link" data-no-tooltip aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">delete_me(conn, params)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L546" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L582" class="icon-action" rel="help" aria-label="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="disable_2fa/2">
+
+  <div class="detail-header">
+    <a href="#disable_2fa/2" class="detail-link" data-no-tooltip aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <h1 class="signature" translate="no">disable_2fa(conn, map)</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L448" class="icon-action" rel="help" aria-label="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="force_initiate_2fa_setup/2">
+
+  <div class="detail-header">
+    <a href="#force_initiate_2fa_setup/2" class="detail-link" data-no-tooltip aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <h1 class="signature" translate="no">force_initiate_2fa_setup(conn, params)</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L390" class="icon-action" rel="help" aria-label="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="generate_2fa_recovery_codes/2">
+
+  <div class="detail-header">
+    <a href="#generate_2fa_recovery_codes/2" class="detail-link" data-no-tooltip aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <h1 class="signature" translate="no">generate_2fa_recovery_codes(conn, map)</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L463" class="icon-action" rel="help" aria-label="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
      </a>
 
 
@@ -438,15 +471,53 @@ Functions
 <section class="detail" id="google_auth_callback/2">
 
   <div class="detail-header">
-    <a href="#google_auth_callback/2" class="detail-link" title="Link to this function">
+    <a href="#google_auth_callback/2" class="detail-link" data-no-tooltip aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">google_auth_callback(conn, params)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L561" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L613" class="icon-action" rel="help" aria-label="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="initiate_2fa_setup/2">
+
+  <div class="detail-header">
+    <a href="#initiate_2fa_setup/2" class="detail-link" data-no-tooltip aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <h1 class="signature" translate="no">initiate_2fa_setup(conn, params)</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L394" class="icon-action" rel="help" aria-label="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="invitation_expired/2">
+
+  <div class="detail-header">
+    <a href="#invitation_expired/2" class="detail-link" data-no-tooltip aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <h1 class="signature" translate="no">invitation_expired(conn, params)</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L352" class="icon-action" rel="help" aria-label="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
      </a>
 
 
@@ -460,15 +531,13 @@ Functions
 <section class="detail" id="login/2">
 
   <div class="detail-header">
-    <a href="#login/2" class="detail-link" title="Link to this function">
+    <a href="#login/2" class="detail-link" data-no-tooltip aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">login(conn, map)</h1>
+    <h1 class="signature" translate="no">login(conn, params)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L357" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L276" class="icon-action" rel="help" aria-label="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
      </a>
 
 
@@ -482,15 +551,13 @@ Functions
 <section class="detail" id="login_form/2">
 
   <div class="detail-header">
-    <a href="#login_form/2" class="detail-link" title="Link to this function">
+    <a href="#login_form/2" class="detail-link" data-no-tooltip aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">login_form(conn, params)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L443" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L247" class="icon-action" rel="help" aria-label="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
      </a>
 
 
@@ -504,59 +571,13 @@ Functions
 <section class="detail" id="logout/2">
 
   <div class="detail-header">
-    <a href="#logout/2" class="detail-link" title="Link to this function">
+    <a href="#logout/2" class="detail-link" data-no-tooltip aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">logout(conn, params)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L552" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L605" class="icon-action" rel="help" aria-label="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-
-  </section>
-</section>
-<section class="detail" id="new_api_key/2">
-
-  <div class="detail-header">
-    <a href="#new_api_key/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">new_api_key(conn, params)</h1>
-
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L503" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-
-  </section>
-</section>
-<section class="detail" id="password_form/2">
-
-  <div class="detail-header">
-    <a href="#password_form/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">password_form(conn, params)</h1>
-
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L447" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
      </a>
 
 
@@ -570,15 +591,13 @@ Functions
 <section class="detail" id="password_reset/2">
 
   <div class="detail-header">
-    <a href="#password_reset/2" class="detail-link" title="Link to this function">
+    <a href="#password_reset/2" class="detail-link" data-no-tooltip aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">password_reset(conn, map)</h1>
+    <h1 class="signature" translate="no">password_reset(conn, params)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L318" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L238" class="icon-action" rel="help" aria-label="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
      </a>
 
 
@@ -592,15 +611,13 @@ Functions
 <section class="detail" id="password_reset_form/2">
 
   <div class="detail-header">
-    <a href="#password_reset_form/2" class="detail-link" title="Link to this function">
+    <a href="#password_reset_form/2" class="detail-link" data-no-tooltip aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">password_reset_form(conn, map)</h1>
+    <h1 class="signature" translate="no">password_reset_form(conn, params)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L294" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L211" class="icon-action" rel="help" aria-label="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
      </a>
 
 
@@ -614,15 +631,13 @@ Functions
 <section class="detail" id="password_reset_request/2">
 
   <div class="detail-header">
-    <a href="#password_reset_request/2" class="detail-link" title="Link to this function">
+    <a href="#password_reset_request/2" class="detail-link" data-no-tooltip aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">password_reset_request(conn, params)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L255" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L172" class="icon-action" rel="help" aria-label="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
      </a>
 
 
@@ -636,103 +651,13 @@ Functions
 <section class="detail" id="password_reset_request_form/2">
 
   <div class="detail-header">
-    <a href="#password_reset_request_form/2" class="detail-link" title="Link to this function">
+    <a href="#password_reset_request_form/2" class="detail-link" data-no-tooltip aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">password_reset_request_form(conn, _)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L249" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L168" class="icon-action" rel="help" aria-label="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-
-  </section>
-</section>
-<section class="detail" id="register/2">
-
-  <div class="detail-header">
-    <a href="#register/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">register(conn, params)</h1>
-
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L60" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-
-  </section>
-</section>
-<section class="detail" id="register_form/2">
-
-  <div class="detail-header">
-    <a href="#register_form/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">register_form(conn, params)</h1>
-
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L51" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-
-  </section>
-</section>
-<section class="detail" id="register_from_invitation/2">
-
-  <div class="detail-header">
-    <a href="#register_from_invitation/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">register_from_invitation(conn, params)</h1>
-
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L110" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-
-  </section>
-</section>
-<section class="detail" id="register_from_invitation_form/2">
-
-  <div class="detail-header">
-    <a href="#register_from_invitation_form/2" class="detail-link" title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">register_from_invitation_form(conn, map)</h1>
-
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L87" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
      </a>
 
 
@@ -746,15 +671,13 @@ Functions
 <section class="detail" id="request_activation_code/2">
 
   <div class="detail-header">
-    <a href="#request_activation_code/2" class="detail-link" title="Link to this function">
+    <a href="#request_activation_code/2" class="detail-link" data-no-tooltip aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">request_activation_code(conn, params)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L237" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L150" class="icon-action" rel="help" aria-label="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
      </a>
 
 
@@ -765,18 +688,16 @@ Functions
 
   </section>
 </section>
-<section class="detail" id="save_settings/2">
+<section class="detail" id="verify_2fa/2">
 
   <div class="detail-header">
-    <a href="#save_settings/2" class="detail-link" title="Link to this function">
+    <a href="#verify_2fa/2" class="detail-link" data-no-tooltip aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">save_settings(conn, map)</h1>
+    <h1 class="signature" translate="no">verify_2fa(conn, params)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L474" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L496" class="icon-action" rel="help" aria-label="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
      </a>
 
 
@@ -787,18 +708,16 @@ Functions
 
   </section>
 </section>
-<section class="detail" id="set_password/2">
+<section class="detail" id="verify_2fa_form/2">
 
   <div class="detail-header">
-    <a href="#set_password/2" class="detail-link" title="Link to this function">
+    <a href="#verify_2fa_form/2" class="detail-link" data-no-tooltip aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">set_password(conn, map)</h1>
+    <h1 class="signature" translate="no">verify_2fa_form(conn, params)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L454" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L482" class="icon-action" rel="help" aria-label="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
      </a>
 
 
@@ -809,18 +728,76 @@ Functions
 
   </section>
 </section>
-<section class="detail" id="user_settings/2">
+<section class="detail" id="verify_2fa_recovery_code/2">
 
   <div class="detail-header">
-    <a href="#user_settings/2" class="detail-link" title="Link to this function">
+    <a href="#verify_2fa_recovery_code/2" class="detail-link" data-no-tooltip aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">user_settings(conn, params)</h1>
+    <h1 class="signature" translate="no">verify_2fa_recovery_code(conn, map)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L469" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L532" class="icon-action" rel="help" aria-label="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="verify_2fa_recovery_code_form/2">
+
+  <div class="detail-header">
+    <a href="#verify_2fa_recovery_code_form/2" class="detail-link" data-no-tooltip aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <h1 class="signature" translate="no">verify_2fa_recovery_code_form(conn, params)</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L518" class="icon-action" rel="help" aria-label="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="verify_2fa_setup/2">
+
+  <div class="detail-header">
+    <a href="#verify_2fa_setup/2" class="detail-link" data-no-tooltip aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <h1 class="signature" translate="no">verify_2fa_setup(conn, map)</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L419" class="icon-action" rel="help" aria-label="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="verify_2fa_setup_form/2">
+
+  <div class="detail-header">
+    <a href="#verify_2fa_setup_form/2" class="detail-link" data-no-tooltip aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <h1 class="signature" translate="no">verify_2fa_setup_form(conn, params)</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/controllers/auth_controller.ex#L411" class="icon-action" rel="help" aria-label="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
      </a>
 
 
@@ -835,34 +812,33 @@ Functions
     </div>
   </section>
 
-      <footer class="footer">
-        <p>
+    <footer class="footer">
+      <p>
 
-          <span class="line">
-            <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-              Search HexDocs
-            </button>
+        <span class="line">
+          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+            Search HexDocs
+          </button>
 
-              <a href="Plausible.epub" title="ePub version">
-                Download ePub version
-              </a>
+            <a href="Plausible.epub" title="ePub version">
+              Download ePub version
+            </a>
 
-          </span>
-        </p>
+        </span>
+      </p>
 
-        <p class="built-using">
-          Built using
-          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.29.4) for the
+      <p class="built-using">
+        Built using
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.35.1) for the
 
-            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+          <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
 
-        </p>
-      </footer>
-    </div>
+      </p>
+
+    </footer>
   </div>
-</section>
+</main>
 </div>
-
 <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 <script>mermaid.initialize({startOnLoad: true})</script>
 
